@@ -15,5 +15,15 @@ namespace Engine
         public int Exp { get; set; }
         public int Level { get; set; }
 
+        public Player()
+        {
+            CurrentHitPoints = 10;
+            TotalHitPoints = 10;
+            Gold = 25;
+            Exp = 0;
+            Level = 1;
+
+        }
+
     }
 }
