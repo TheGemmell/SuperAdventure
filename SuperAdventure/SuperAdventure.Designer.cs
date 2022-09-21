@@ -77,7 +77,9 @@
             // lblHitPoints
             // 
             this.lblHitPoints.AutoSize = true;
-            this.lblHitPoints.Location = new System.Drawing.Point(110, 19);
+            this.lblHitPoints.BackColor = System.Drawing.SystemColors.Control;
+            this.lblHitPoints.ForeColor = System.Drawing.Color.Red;
+            this.lblHitPoints.Location = new System.Drawing.Point(110, 20);
             this.lblHitPoints.Name = "lblHitPoints";
             this.lblHitPoints.Size = new System.Drawing.Size(35, 13);
             this.lblHitPoints.TabIndex = 4;
@@ -86,7 +88,7 @@
             // lblGold
             // 
             this.lblGold.AutoSize = true;
-            this.lblGold.Location = new System.Drawing.Point(110, 45);
+            this.lblGold.Location = new System.Drawing.Point(110, 46);
             this.lblGold.Name = "lblGold";
             this.lblGold.Size = new System.Drawing.Size(35, 13);
             this.lblGold.TabIndex = 5;
@@ -95,7 +97,7 @@
             // lblExp
             // 
             this.lblExp.AutoSize = true;
-            this.lblExp.Location = new System.Drawing.Point(110, 73);
+            this.lblExp.Location = new System.Drawing.Point(110, 74);
             this.lblExp.Name = "lblExp";
             this.lblExp.Size = new System.Drawing.Size(35, 13);
             this.lblExp.TabIndex = 6;
@@ -104,7 +106,7 @@
             // lblLevel
             // 
             this.lblLevel.AutoSize = true;
-            this.lblLevel.Location = new System.Drawing.Point(110, 99);
+            this.lblLevel.Location = new System.Drawing.Point(110, 100);
             this.lblLevel.Name = "lblLevel";
             this.lblLevel.Size = new System.Drawing.Size(35, 13);
             this.lblLevel.TabIndex = 7;

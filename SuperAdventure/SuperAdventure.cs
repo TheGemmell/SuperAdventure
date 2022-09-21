@@ -14,10 +14,29 @@ namespace SuperAdventure
 {
     public partial class SuperAdventure : Form
     {
-        private Player _player;
+        private readonly Player _player = new Player();
         public SuperAdventure()
         {
             InitializeComponent();
+
+            UpdateUi(_player);
+        }
+
+
+        public void UpdateUi(Player p) {
+            if (p.CurrentHitPoints < (p.TotalHitPoints / 25))
+            {
+                lblHitPoints.ForeColor = Color.Red;
+            }
+            else
+            {
+                lblHitPoints.ForeColor = DefaultForeColor;
+            }
+
+            lblHitPoints.Text = p.CurrentHitPoints.ToString();
+            lblGold.Text = p.Gold.ToString();
+            lblExp.Text = p.Exp.ToString();
+            lblLevel.Text = p.Level.ToString();
         }
 
         private void SuperAdventure_Load(object sender, EventArgs e)
