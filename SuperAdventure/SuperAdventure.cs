@@ -19,12 +19,14 @@ namespace SuperAdventure
         {
             InitializeComponent();
 
+            Location location = new Location(1, "Home","This is your house");
+            
             UpdateUi(_player);
         }
 
 
         public void UpdateUi(Player p) {
-            if (p.CurrentHitPoints < (p.TotalHitPoints / 25))
+            if (p.CurrentHitPoints < (p.MaximumHitPoints / 25))
             {
                 lblHitPoints.ForeColor = Color.Red;
             }
