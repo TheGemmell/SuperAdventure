@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace Engine
 {
-    public class Player
+    public class Player : LivingCreature
     {
-        public int CurrentHitPoints { get; set; }
-        public int TotalHitPoints { get; set; }
         public int Gold { get; set; }
         public int Exp { get; set; }
         public int Level { get; set; }
@@ -18,7 +16,7 @@ namespace Engine
         public Player()
         {
             CurrentHitPoints = 10;
-            TotalHitPoints = 10;
+            MaximumHitPoints = 10;
             Gold = 25;
             Exp = 0;
             Level = 1;
