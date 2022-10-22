@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Engine;
 
@@ -14,26 +7,19 @@ namespace SuperAdventure
 {
     public partial class SuperAdventure : Form
     {
-        private readonly Player _player = new Player();
+        private readonly Player _player = new Player(10, 10, 0, 1, 20 );
         public SuperAdventure()
         {
             InitializeComponent();
 
             Location location = new Location(1, "Home","This is your house");
             
-            UpdateUi(_player);
+            UpdateUi(ref _player);
         }
 
 
-        public void UpdateUi(Player p) {
-            if (p.CurrentHitPoints < (p.MaximumHitPoints / 25))
-            {
-                lblHitPoints.ForeColor = Color.Red;
-            }
-            else
-            {
-                lblHitPoints.ForeColor = DefaultForeColor;
-            }
+        public void UpdateUi(ref Player p) {
+            lblHitPoints.ForeColor = p.CurrentHitPoints < (p.MaximumHitPoints / 25) ? Color.Red : DefaultForeColor;
 
             lblHitPoints.Text = p.CurrentHitPoints.ToString();
             lblGold.Text = p.Gold.ToString();
@@ -43,11 +29,13 @@ namespace SuperAdventure
 
         private void SuperAdventure_Load(object sender, EventArgs e)
         {
-            string[] labelNames = new string[4] { "Hit Points", "Gold", "Experience", "Level" };
-            label1.Text = labelNames[0];
-            label2.Text = labelNames[1];
-            label3.Text = labelNames[2];
-            label4.Text = labelNames[3];
+            var labelNames = new string[4] { "Hit Points", "Gold", "Experience", "Level" };
+            
+            // Looping through the labels and set their text to the corresponding value in the array.
+            for (var i = 0; i < labelNames.Length; i++)
+            {
+                Controls["label" + (i + 1)].Text = labelNames[i];
+            }
         }
 
 

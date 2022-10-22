@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Engine
 {
@@ -12,16 +7,17 @@ namespace Engine
         public int Gold { get; set; }
         public int Exp { get; set; }
         public int Level { get; set; }
+        public List<InventoryItem> Inventory { get; set; }
+        public List<PlayerQuest> Quests { get; set; }
 
-        public Player()
+        public Player(int currentHitPoints, int maximumHitPoints, int exp, int level=1, int gold=25 ) 
+            : base(currentHitPoints, maximumHitPoints)
         {
-            CurrentHitPoints = 10;
-            MaximumHitPoints = 10;
-            Gold = 25;
-            Exp = 0;
-            Level = 1;
-
+            Gold = gold;
+            Exp = exp;
+            Level = level;
+            Inventory = new List<InventoryItem>();
+            Quests = new List<PlayerQuest>();
         }
-
     }
 }
